@@ -19,6 +19,9 @@ def result(request):
       result = int(number1) * int(number2)
 
     elif signiture == "/":
-      result = int(number1) / int(number2)
+      if number2 == "0":
+        result = "division by zero"
+      else:
+        result = int(number1) / int(number2)
 
   return render(request, "result.html", {'result': result})
